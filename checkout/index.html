@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Page</title>
+    <link href="layout.css" rel="stylesheet" type="text/css">
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div>
+            <nav>
+                <ul>
+                    <li><img src="logo.JPG" alt="Logo Picture" class="logo"></li>
+                    <li><a href="../index.html">Homepage</a></li>
+                    <li><a href="../checkout/index.html">Check Out</a></li>
+                    <li><a href="../about/index.html">About us </a></li>
+                    <li><a href="../sales/index.html">Sales</a></li>
+                    <li><a href="../enhanced sales/index.html">Enhanced Sales </a></li>
+                    <li><a href="../accesories/index.html">Additional Accessories </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+        <form name="gbForm" method="post" action="URL_to_script">
+
+            <output id="errors"></output>
+
+            <fieldset style="background-color: lightblue; width: 50%;" >
+
+                <legend>Enter Delivery Address</legend>
+
+                <table >
+                    <tr>
+                        <td><label class="question" for="the_name">First Name </label></td>
+                        <td><input type="text" id="the_name" name="nameFmInput" placeholder="First Name." size="50"
+                                requiredautofocus></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_name">Last Name</label> </td>
+                        <td><input type="text" id="the_last_name" name="lastFmInput" placeholder="Last Name "
+                                size="50" required></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_name">Address</label></td>
+                        <td> <input type="text" id="the_Address" name="addressFmInput" placeholder="Address." size="50"
+                                requiredautofocus></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_email">City</label></td>
+                        <td> <input type="text" id="the_last_name" name="cityFmInput" placeholder="City " size="50"
+                                required></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_name">State</label></td>
+                        <td><input type="text" id="the_name" name="stateFmInput" placeholder="State" size="50"
+                                requiredautofocus></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_email">Zip Code</label></td>
+                        <td><input type="text" id="the_last_name" name="zipFmInput" placeholder="Zip Code" size="50"
+                                required></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_name">Phone Number</label></td>
+                        <td><input type="text" id="the_name" name="phoneFmInput" placeholder="Phone Number" size="50"
+                                requiredautofocus></td>
+
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_email">Email Address</label></td>
+                        <td><input type="text" id="the_last_name" name="emailFmInput" placeholder="Email Address"
+                                size="50" required></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <td colspan="2">
+                        <input type="button" name="calc" value="Continue" onclick="calculate();">
+                        <input type="button" name="clear" value="Clear" onclick="clearinfo();">
+                    </td>
+                </table>
+                </fieldset>
+
+    
+
+    
+
+            <output id="errors"></output>
+
+            <fieldset style="background-color: lightblue; width: 40%;">
+
+                <legend>Credit Card Information</legend>
+
+                <table>
+                    <tr>
+                        <td><label class="question" for="the_name">Name on card</label></td>
+                        <td><input type="text" id="the_name" name="name1FmInput" placeholder="Name on card" size="20"
+                                requiredautofocus></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_name">Card Number</label> </td>
+                        <td><input type="number" id="cardNumberFmInput" name="cardNumberFmInput" placeholder="Cardnumber "
+                                size="50" required></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_name">Expiration Date </label></td>
+                        <td> <input type="number" id="dateFmInput" name="dateFmInput" placeholder="DD/MM" size="50"
+                                requiredautofocus></td>
+                    </tr>
+                    <tr>
+                        <td><label class="question" for="the_email">Cvv</label></td>
+                        <td> <input type="number" id="cvvFmInput" name="cvvFmInput" placeholder="Cvv" size="50"
+                                required></td>
+                    </tr>
+
+                    <td colspan="2">
+                        <input type="button" name="calc" value="Continue" onclick="calculate();">
+                        <input type="button" name="clear" value="Clear" onclick="clearinfo1();">
+                    </td>
+                </table>
+            </form>
+        </fieldset>
+        <fieldset style="background-color: lightblue;"> 
+        <legend>Calculate Your Bill</legend>
+        <form name="theform">
+        <table>
+            <tr>
+                <td><label class="question" for="the_name">Price of Tv:</label></td>
+                <td><input  name="priceFmInput" size="10" ></td>
+            </tr>
+            <tr>
+                <td><label class="question" for="the_name">Tax: (8.25)</label> </td>
+                <td id="taxResultFmOutput" size="10"></td>
+            </tr>
+            <tr>
+                <td><label class="question" for="the_name">Free Fhipping</label></td>
+                <td id="shippingFmOutput" size="10"></td>
+            </tr>
+            <tr>
+                <td><label class="question" for="the_email">Total:</label></td>
+                <td id="totalFmOutput" style="background-color: white; color: black ; font-weight: bold;" size="10"></td>
+            </tr>
+
+            <td colspan="2">
+                <input type="button" name="calc" value="Calculate" onclick="calculate();">
+                <input type="button" name="clear" value="Clear" onclick="clearinfo3();">
+            </td>
+        </table>
+    </form>
+    </fieldset>
+    <script>
+        function calculate() {
+
+        price = parseFloat(document.theform.priceFmInput.value);
+
+        taxResult = parseFloat(price * .0825);
+        total = (price + taxResult);
+
+            document.getElementById("taxResultFmOutput").innerHTML = "$" + taxResult.toFixed(2);
+            document.getElementById("shippingFmOutput").innerHTML = "$00.00";
+            document.getElementById("totalFmOutput").innerHTML = "$" + total.toFixed(2);
+
+        }
+        function clearinfo3() {
+            document.theform.priceFmInput.value = " ";
+
+            document.getElementById("taxResultFmOutput").innerHTML = " ";
+            document.getElementById("shippingFmOutput").innerHTML = " ";
+            document.getElementById("totalFmOutput").innerHTML = " ";
+
+        }
+
+        function clearinfo() {
+
+            document.gbForm.nameFmInput.value = " ";
+            document.gbForm.lastFmInput.value = " ";
+            document.gbForm.addressFmInput.value = " ";
+            document.gbForm.cityFmInput.value = " ";
+            document.gbForm.stateFmInput.value = " ";
+            document.gbForm.zipFmInput.value = " ";
+            document.gbForm.phoneFmInput.value = " ";
+            document.gbForm.emailFmInput.value = " ";
+
+        }
+
+        function clearinfo1() {
+            document.gbForm.name1FmInput.value = " ";
+            document.gbForm.cardNumberFmInput.value = " ";
+            document.gbForm.dateFmInput.value = " ";
+            document.gbForm.cvvFmInput.value = " ";
+
+            
+        }
+    </script>
+
+<a href="http://csnet.southtexascollege.edu/localuser/jcast183/index.html" style="color: black;">Go Back to
+    HOMEPAGE<br>
+    Jovanni Castillo Moreno</a>
+
+
+    <footer style="height: 50%; color:white;">
+        <nav style="text-align:center">
+            <a href="../locations/index.html" style="color: white;">Locations </a>|
+            <a href="../about/index.html" style="color: white;">About us </a>|  
+            <a href="../article 1/index.html" style="color: white;">Article Index</a>|
+            <a href="../comments/index.html" style="color: white;">Customer Resources </a>|
+            <a href="../terms of services/index.html" style="color: white;">Terms of Privacy </a>|
+            <a href="../article 2/index.html" style="color: white;">Article 2</a>|
+            <br>
+            <br>
+            <P style="color: white;">&copy;Entertainment center, all rights reserved</P>
+    </footer>
+
+
+</body>
+
+</html>
